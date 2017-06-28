@@ -14,7 +14,7 @@ public class score : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(SceneManager.GetActiveScene().name == "test"){
+		if(SceneManager.GetActiveScene().name == "stage1"){
 			point = 0;
 			max = 68;
 		} else if(SceneManager.GetActiveScene().name == "result"){
@@ -34,8 +34,8 @@ public class score : MonoBehaviour {
 		if(SceneManager.GetActiveScene().name == "result"){
 			ScoreText.text = point.ToString() + " / " + max.ToString();
 
-		} else if(SceneManager.GetActiveScene().name == "test"){
-			ScoreText.text = "SCORE : " + point.ToString();
+		} else if(SceneManager.GetActiveScene().name == "stage1"){
+			ScoreText.text = point.ToString();
 
 		}
     }

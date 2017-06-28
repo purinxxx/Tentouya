@@ -14,7 +14,6 @@ public class onscreencollider : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (_isRendered) {
-			//処理を軽くするために光った後のcolliderを無効化
 			if (GetComponent<BoxCollider2D> () != null)
 				GetComponent<BoxCollider2D> ().enabled = true;
 			if (GetComponent<PolygonCollider2D> () != null)
@@ -37,6 +36,8 @@ public class onscreencollider : MonoBehaviour {
 	}
 
 	void OnWillRenderObject() {
-		_isRendered = true;
+		if (Camera.current.tag == "MainCamera") {
+			_isRendered = true;
+		}
 	}
 }
